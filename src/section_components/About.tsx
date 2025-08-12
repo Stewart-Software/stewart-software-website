@@ -16,7 +16,7 @@ export default function About() {
     >
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-900"
+          className="text-4xl md:text-5xl font-bold mb-16 text-center text-[#264653]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -36,12 +36,12 @@ export default function About() {
           >
             <div className="relative">
               {/* Background decoration */}
-              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-indigo-200/50 to-blue-200/50 rounded-2xl"></div>
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-[#2A9D8F]/30 to-[#F4A261]/20 rounded-2xl"></div>
 
               {/* Photo */}
               <div className="relative bg-white p-2 rounded-2xl shadow-xl">
                 <Image
-                  src="/about_images/profilePicture.jpg" // Add your photo to public folder
+                  src="/about_images/profilePicture.jpg"
                   alt="Geoffrey Stewart - Founder of Stewart Software"
                   width={400}
                   height={500}
@@ -51,7 +51,7 @@ export default function About() {
               </div>
 
               {/* Floating accent */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#2A9D8F] rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white text-2xl">👋</span>
               </div>
             </div>
@@ -66,14 +66,14 @@ export default function About() {
             className="space-y-6"
           >
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-[#264653] mb-4">
                 Hi, I&apos;m Geoffrey 👨‍💻
               </h3>
 
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
                   I&apos;m the founder of{" "}
-                  <span className="font-semibold text-indigo-600">
+                  <span className="font-semibold text-[#F4A261]">
                     Stewart Software
                   </span>
                   , where I help startups and small businesses turn their ideas
@@ -91,15 +91,15 @@ export default function About() {
             </div>
 
             {/* Tech Stack */}
-            <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-6 border border-indigo-100">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">
+            <div className="bg-gradient-to-r from-[#2A9D8F]/10 to-[#F4A261]/10 rounded-2xl p-6 border border-[#2A9D8F]/20">
+              <h4 className="text-lg font-semibold text-[#264653] mb-4 text-center">
                 Technologies I Love Working With
               </h4>
               <div className="flex flex-wrap justify-center gap-2">
                 {STACK.map((tech, index) => (
                   <motion.span
                     key={tech}
-                    className="bg-white text-indigo-700 px-3 py-2 rounded-full text-sm font-medium shadow-sm border border-indigo-200"
+                    className="bg-white text-[#2A9D8F] px-3 py-2 rounded-full text-sm font-medium shadow-sm border border-[#2A9D8F]/30"
                     whileHover={{ scale: 1.05, y: -2 }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

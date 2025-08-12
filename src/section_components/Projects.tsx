@@ -15,7 +15,7 @@ export default function Projects() {
       className="py-24"
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-900"
+        className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#264653]"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -46,12 +46,12 @@ export default function Projects() {
                 height={350}
                 className="object-cover w-full h-56 group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
             <div className="p-8">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                <h3 className="text-2xl font-bold text-[#264653] group-hover:text-[#2A9D8F] transition-colors">
                   {title}
                 </h3>
               </div>
@@ -61,7 +61,7 @@ export default function Projects() {
               </p>
 
               <motion.span
-                className="inline-flex items-center bg-gradient-to-r from-indigo-100 to-blue-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-semibold"
+                className="inline-flex items-center bg-gradient-to-r from-[#2A9D8F]/20 to-[#F4A261]/20 text-[#264653] px-4 py-2 rounded-full text-sm font-semibold border border-[#2A9D8F]/30"
                 whileHover={{ scale: 1.05 }}
               >
                 {industry}

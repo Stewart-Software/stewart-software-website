@@ -20,7 +20,7 @@ export default function Hero({ heroY }: HeroProps) {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <motion.h1
-          className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-indigo-800 to-blue-800 bg-clip-text text-transparent mb-6"
+          className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#264653] via-[#2A9D8F] to-[#F4A261] bg-clip-text text-transparent mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -35,13 +35,11 @@ export default function Hero({ heroY }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           Founder & Software Engineer at{" "}
-          <span className="text-indigo-600 font-semibold">
-            Stewart Software
-          </span>
+          <span className="text-[#F4A261] font-semibold">Stewart Software</span>
         </motion.p>
 
         <motion.p
-          className="text-lg text-indigo-600 font-medium mb-12"
+          className="text-lg text-[#2A9D8F] font-medium mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -57,7 +55,7 @@ export default function Hero({ heroY }: HeroProps) {
         >
           <motion.a
             href="#contact"
-            className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-colors flex items-center gap-2"
+            className="bg-[#F4A261] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E8914A] transition-colors flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -65,7 +63,7 @@ export default function Hero({ heroY }: HeroProps) {
           </motion.a>
           <motion.a
             href="#projects"
-            className="border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-indigo-50 transition-colors flex items-center gap-2"
+            className="border-2 border-[#2A9D8F] text-[#2A9D8F] px-8 py-3 rounded-full font-semibold hover:bg-[#2A9D8F]/10 transition-colors flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -79,7 +77,7 @@ export default function Hero({ heroY }: HeroProps) {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
-        <ArrowDown className="text-indigo-600" size={24} />
+        <ArrowDown className="text-[#2A9D8F]" size={24} />
       </motion.div>
     </motion.section>
   );

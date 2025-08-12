@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -66,86 +66,86 @@ export default function FAQ() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="py-24 bg-gray-50/50 rounded-3xl my-12"
+      className="py-24 bg-white/50 rounded-3xl my-12"
     >
-      <div className="max-w-4xl mx-auto px-6">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-8 text-center text-gray-900"
+      <div className="max-w-4xl mx-auto px-8">
+        <motion.div
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Frequently Asked Questions
-        </motion.h2>
-
-        <motion.p
-          className="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Got questions? Here are answers to the most common questions I receive
-          from clients.
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#264653]">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg text-gray-600">
+            Got questions? I&apos;ve got answers.
+          </p>
+        </motion.div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+              className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <button
+              <motion.button
+                className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-[#2A9D8F]/5 transition-colors"
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                whileHover={{ backgroundColor: "rgba(42, 157, 143, 0.05)" }}
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-lg font-semibold text-[#264653] pr-8">
                   {faq.question}
                 </h3>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex-shrink-0"
+                  transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown className="text-indigo-600" size={24} />
+                  <ChevronDown
+                    className={`w-6 h-6 ${
+                      openIndex === index ? "text-[#2A9D8F]" : "text-gray-400"
+                    }`}
+                  />
                 </motion.div>
-              </button>
+              </motion.button>
 
-              <motion.div
-                initial={false}
-                animate={{
-                  height: openIndex === index ? "auto" : 0,
-                  opacity: openIndex === index ? 1 : 0,
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                </div>
-              </motion.div>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-8 pb-6 border-t border-[#2A9D8F]/10">
+                      <p className="text-gray-600 leading-relaxed pt-4">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          className="mt-12 text-center"
+          className="text-center mt-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <p className="text-gray-600 mb-4">
-            Still have questions? I&apos;d love to hear from you.
-          </p>
+          <p className="text-gray-600 mb-4">Still have questions?</p>
           <motion.a
             href="#contact"
-            className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-colors"
+            className="inline-block bg-[#F4A261] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E8914A] transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

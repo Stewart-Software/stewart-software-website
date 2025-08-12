@@ -20,7 +20,7 @@ export default function Home() {
       {/* Enhanced Background */}
       <div className="fixed inset-0 -z-10">
         {/* Main gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-blue-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FDFCF7] via-white to-[#2A9D8F]/10"></div>
 
         {/* Animated mesh gradient overlay */}
         <div
@@ -28,10 +28,10 @@ export default function Home() {
           style={{
             background: `
               linear-gradient(-45deg, 
-                rgba(99, 102, 241, 0.1), 
-                rgba(59, 130, 246, 0.08), 
-                rgba(147, 197, 253, 0.06), 
-                rgba(165, 180, 252, 0.1)
+                rgba(244, 162, 97, 0.1), 
+                rgba(42, 157, 143, 0.08), 
+                rgba(233, 196, 106, 0.06), 
+                rgba(38, 70, 83, 0.1)
               )`,
             backgroundSize: "400% 400%",
             animation: "meshGradient 15s ease infinite",
@@ -55,11 +55,11 @@ export default function Home() {
             >
               <path
                 d="M0,15 Q12.5,5 25,15 T50,15 L50,25 L0,25 Z"
-                fill="rgba(99, 102, 241, 0.12)"
+                fill="rgba(42, 157, 143, 0.15)"
               />
               <path
                 d="M0,8 Q12.5,18 25,8 T50,8 L50,0 L0,0 Z"
-                fill="rgba(59, 130, 246, 0.08)"
+                fill="rgba(38, 70, 83, 0.12)"
               />
             </pattern>
 
@@ -71,7 +71,7 @@ export default function Home() {
               height="8"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="4" cy="4" r="1.5" fill="rgba(99, 102, 241, 0.15)" />
+              <circle cx="4" cy="4" r="1.5" fill="rgba(233, 196, 106, 0.4)" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#bold-waves)" />
@@ -79,19 +79,19 @@ export default function Home() {
         </svg>
 
         {/* Large floating accent shapes */}
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-r from-indigo-300/30 to-purple-300/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 -right-32 w-80 h-80 bg-gradient-to-l from-blue-300/25 to-indigo-300/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-gradient-to-tr from-slate-300/20 to-blue-200/25 rounded-full blur-2xl"></div>
-        <div className="absolute top-2/3 right-1/4 w-64 h-64 bg-gradient-to-bl from-indigo-200/35 to-blue-300/20 rounded-full blur-2xl"></div>
+        <div className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-r from-[#2A9D8F]/25 to-[#264653]/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -right-32 w-80 h-80 bg-gradient-to-l from-[#2A9D8F]/25 to-[#F4A261]/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-gradient-to-tr from-[#264653]/20 to-[#2A9D8F]/25 rounded-full blur-2xl"></div>
+        <div className="absolute top-2/3 right-1/4 w-64 h-64 bg-gradient-to-bl from-[#F4A261]/35 to-[#2A9D8F]/20 rounded-full blur-2xl"></div>
 
         {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-[#2A9D8F] rounded-full animate-pulse"></div>
         <div
-          className="absolute top-3/4 right-1/3 w-3 h-3 bg-blue-400 rounded-full animate-pulse"
+          className="absolute top-3/4 right-1/3 w-3 h-3 bg-[#2A9D8F] rounded-full animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"
+          className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-[#E9C46A] rounded-full animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>

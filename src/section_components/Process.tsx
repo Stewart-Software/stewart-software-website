@@ -45,7 +45,7 @@ export default function Process() {
     >
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-8 text-gray-900"
+          className="text-4xl md:text-5xl font-bold mb-8 text-[#264653]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -78,7 +78,7 @@ export default function Process() {
               {/* Connection line (hidden on mobile) */}
               {index < processSteps.length - 1 && (
                 <div
-                  className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-gradient-to-r from-indigo-300 to-transparent z-0"
+                  className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-gradient-to-r from-[#2A9D8F]/50 to-transparent z-0"
                   style={{ width: "calc(100% - 3rem)" }}
                 />
               )}
@@ -87,14 +87,14 @@ export default function Process() {
                 className="relative z-10 bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-indigo-600 text-white rounded-full font-bold text-xl mx-auto mb-4 relative">
+                <div className="flex items-center justify-center w-16 h-16 bg-[#F4A261] text-white rounded-full font-bold text-xl mx-auto mb-4 relative">
                   {item.step}
                   <div className="absolute -top-2 -right-2 text-2xl">
                     {item.icon}
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-[#264653]">
                   {item.title}
                 </h3>
 
@@ -107,13 +107,13 @@ export default function Process() {
         </div>
 
         <motion.div
-          className="mt-12 p-6 bg-indigo-50 rounded-2xl border border-indigo-100"
+          className="mt-12 p-6 bg-[#2A9D8F]/10 rounded-2xl border border-[#2A9D8F]/20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <p className="text-indigo-800 font-medium">
+          <p className="text-[#264653] font-medium">
             ⏱️ <strong>Timeline:</strong> Most projects are completed within 4-8
             weeks, depending on scope and complexity.
           </p>

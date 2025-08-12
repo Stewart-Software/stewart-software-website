@@ -35,7 +35,7 @@ export default function Services() {
     >
       <div className="max-w-4xl mx-auto text-center px-8">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-12 text-gray-900"
+          className="text-4xl md:text-5xl font-bold mb-12 text-[#264653]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -56,7 +56,7 @@ export default function Services() {
               whileHover={{ y: -5 }}
             >
               <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
+              <h3 className="text-xl font-bold mb-4 text-[#264653]">
                 {service.title}
               </h3>
               <p className="text-gray-600">{service.description}</p>

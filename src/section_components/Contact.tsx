@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -11,81 +11,62 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="py-24 mb-16"
+      className="py-24"
     >
-      <div className="text-center">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-8 text-gray-900"
+      <div className="max-w-4xl mx-auto text-center px-8">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Let&apos;s Work Together
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#264653]">
+            Let&apos;s Build Something Amazing
+          </h2>
 
-        <motion.p
-          className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto"
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            Ready to turn your idea into reality? I&apos;d love to hear about
+            your project and discuss how we can work together.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="max-w-md mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Have a project in mind? I&apos;d love to hear about it. Let&apos;s
-          discuss how we can bring your ideas to life.
-        </motion.p>
+          <div className="p-12 bg-white rounded-3xl shadow-xl border border-gray-100">
+            <div className="w-20 h-20 bg-[#F4A261] rounded-full flex items-center justify-center mx-auto mb-6">
+              <Mail className="w-10 h-10 text-white" />
+            </div>
 
-        <motion.div
-          className="flex flex-col sm:flex-row justify-center gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <motion.a
-            href="mailto:geoffrey@stewartsoftware.dev"
-            className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-            whileHover={{ y: -5 }}
-          >
-            <Mail
-              className="text-indigo-600 group-hover:scale-110 transition-transform mb-3"
-              size={32}
-            />
-            <span className="text-gray-900 font-semibold">Email</span>
-            <span className="text-gray-600 text-sm">
+            <h3 className="text-2xl font-bold mb-4 text-[#264653]">
+              Get In Touch
+            </h3>
+
+            <p className="text-gray-600 mb-8">
+              Send me a detailed message about your project and I&apos;ll get
+              back to you within 24 hours.
+            </p>
+
+            <motion.a
+              href="mailto:geoffrey@stewartsoftware.dev"
+              className="inline-block bg-[#F4A261] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E8914A] transition-all text-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
               geoffrey@stewartsoftware.dev
-            </span>
-          </motion.a>
+            </motion.a>
 
-          <motion.a
-            href="https://www.linkedin.com/in/ivangeoffreystewart"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-            whileHover={{ y: -5 }}
-          >
-            <Linkedin
-              className="text-indigo-600 group-hover:scale-110 transition-transform mb-3"
-              size={32}
-            />
-            <span className="text-gray-900 font-semibold">LinkedIn</span>
-            <span className="text-gray-600 text-sm">Connect with me</span>
-          </motion.a>
-
-          <motion.a
-            href="https://github.com/ivanstewart2001"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-            whileHover={{ y: -5 }}
-          >
-            <Github
-              className="text-indigo-600 group-hover:scale-110 transition-transform mb-3"
-              size={32}
-            />
-            <span className="text-gray-900 font-semibold">GitHub</span>
-            <span className="text-gray-600 text-sm">View my code</span>
-          </motion.a>
+            <div className="mt-8 pt-8 border-t border-gray-100">
+              <p className="text-sm text-gray-500">
+                💡 <strong>Pro tip:</strong> Include details about your project,
+                timeline, and budget for a faster response.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </motion.section>
