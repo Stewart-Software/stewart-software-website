@@ -53,11 +53,17 @@ export default function Contact() {
 
             <motion.a
               href="mailto:geoffrey@stewartsoftware.dev"
-              className="inline-block bg-[#F4A261] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-[#E8914A] transition-all text-base md:text-lg"
+              className="inline-block bg-[#F4A261] text-white px-4 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-[#E8914A] transition-all text-sm md:text-base lg:text-lg break-all text-center max-w-full"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              geoffrey@stewartsoftware.dev
+              <span className="block sm:hidden">Email Me</span>
+              <span className="hidden sm:block md:hidden">
+                geoffrey@stewartsoftware.dev
+              </span>
+              <span className="hidden md:block">
+                geoffrey@stewartsoftware.dev
+              </span>
             </motion.a>
 
             <div className="mt-8 pt-8 border-t border-gray-100">
