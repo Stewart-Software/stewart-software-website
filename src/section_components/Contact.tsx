@@ -37,7 +37,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="p-12 bg-white rounded-3xl shadow-xl border border-gray-100">
+          <div className="p-12 bg-white rounded-3xl shadow-xl border border-gray-100 flex flex-col items-center">
             <div className="w-20 h-20 bg-[#F4A261] rounded-full flex items-center justify-center mx-auto mb-6">
               <Mail className="w-10 h-10 text-white" />
             </div>
@@ -53,7 +53,7 @@ export default function Contact() {
 
             <motion.a
               href="mailto:geoffrey@stewartsoftware.dev"
-              className="inline-block bg-[#F4A261] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E8914A] transition-all text-lg"
+              className="inline-block bg-[#F4A261] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-[#E8914A] transition-all text-base md:text-lg"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

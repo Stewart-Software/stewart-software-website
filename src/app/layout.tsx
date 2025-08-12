@@ -38,6 +38,19 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Stewart Software",
     locale: "en_US",
+    images: [
+      {
+        url: "/logos/opengraph_1200x630.png", // social share image
+        width: 1200,
+        height: 630,
+        alt: "Stewart Software - Custom Software Development",
+      },
+    ],
+  },
+  icons: {
+    icon: "/logos/logo_32x32.ico",
+    shortcut: "/logos/stewartSoftwareLogoSmall.png",
+    apple: "/logos/logo_180x180.png",
   },
   robots: {
     index: true,
