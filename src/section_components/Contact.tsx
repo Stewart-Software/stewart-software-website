@@ -21,7 +21,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Let's Work Together
+          Let&apos;s Work Together
         </motion.h2>
 
         <motion.p
@@ -31,8 +31,8 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Have a project in mind? I'd love to hear about it. Let's discuss how
-          we can bring your ideas to life.
+          Have a project in mind? I&apos;d love to hear about it. Let&apos;s
+          discuss how we can bring your ideas to life.
         </motion.p>
 
         <motion.div

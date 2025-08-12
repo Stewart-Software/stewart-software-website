@@ -67,12 +67,12 @@ export default function About() {
           >
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Hi, I'm Geoffrey 👨‍💻
+                Hi, I&apos;m Geoffrey 👨‍💻
               </h3>
 
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
-                  I'm the founder of{" "}
+                  I&apos;m the founder of{" "}
                   <span className="font-semibold text-indigo-600">
                     Stewart Software
                   </span>

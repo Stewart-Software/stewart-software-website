@@ -141,7 +141,7 @@ export default function FAQ() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <p className="text-gray-600 mb-4">
-            Still have questions? I'd love to hear from you.
+            Still have questions? I&apos;d love to hear from you.
           </p>
           <motion.a
             href="#contact"
