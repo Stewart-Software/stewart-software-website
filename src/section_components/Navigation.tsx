@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -92,12 +93,17 @@ export default function Navigation() {
               className="relative"
               style={{ scale: isMobile ? 1 : logoScale }}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold">SS</span>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg">
+                <Image
+                  src="/logos/stewartSoftwareLogoSmall.png"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                />
               </div>
               {!isMobile && (
                 <motion.div
-                  className="absolute -inset-1 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl blur opacity-20"
+                  className="absolute -inset-1 rounded-xl blur opacity-20"
                   animate={{
                     opacity: [0.2, 0.4, 0.2],
                     scale: [1, 1.05, 1],
