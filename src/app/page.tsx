@@ -78,11 +78,11 @@ export default function Home() {
           <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
 
-        {/* Large floating accent shapes */}
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-r from-[#2A9D8F]/25 to-[#264653]/15 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 -right-32 w-80 h-80 bg-gradient-to-l from-[#2A9D8F]/25 to-[#F4A261]/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-gradient-to-tr from-[#264653]/20 to-[#2A9D8F]/25 rounded-full blur-2xl"></div>
-        <div className="absolute top-2/3 right-1/4 w-64 h-64 bg-gradient-to-bl from-[#F4A261]/35 to-[#2A9D8F]/20 rounded-full blur-2xl"></div>
+        {/* Large floating accent shapes - Hidden on mobile */}
+        <div className="hidden md:block absolute top-20 -left-20 w-96 h-96 bg-gradient-to-r from-[#2A9D8F]/25 to-[#264653]/15 rounded-full blur-3xl"></div>
+        <div className="hidden md:block absolute top-1/3 -right-32 w-80 h-80 bg-gradient-to-l from-[#2A9D8F]/25 to-[#F4A261]/30 rounded-full blur-3xl"></div>
+        <div className="hidden md:block absolute bottom-20 left-1/4 w-72 h-72 bg-gradient-to-tr from-[#264653]/20 to-[#2A9D8F]/25 rounded-full blur-2xl"></div>
+        <div className="hidden md:block absolute top-2/3 right-1/4 w-64 h-64 bg-gradient-to-bl from-[#F4A261]/35 to-[#2A9D8F]/20 rounded-full blur-2xl"></div>
 
         {/* Decorative elements */}
         <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-[#2A9D8F] rounded-full animate-pulse"></div>
