@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stewart Software - MVPs & Custom Apps for Startups",
+  title: "Stewart Software | MVPs & Custom Apps for Startups",
   description:
-    "Stewart Software turns ideas into launch-ready products. We design and build scalable MVPs and custom software for startups and small businesses, with a focus on speed, quality, and user experience.",
+    "Stewart Software builds scalable MVPs and custom software for startups and small businesses, focusing on speed, quality, and user experience.",
   keywords: [
     "custom software",
     "MVP development",
