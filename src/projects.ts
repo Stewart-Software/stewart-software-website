@@ -2,7 +2,8 @@ interface Project {
   title: string;
   description: string;
   industry: string;
-  image: string;
+  image?: string;
+  website?: string;
   technologies?: string[];
 }
 
@@ -34,5 +35,23 @@ export const PROJECTS: Array<Project> = [
       "NestJS",
       "MongoDB",
     ],
+  },
+  {
+    title: "Jynxzi Clips",
+    description:
+      "Jynxzi Clips is a video game clip sharing platform primarily focused on Rainbow Six Siege content, where gamers can upload their best gameplay moments, rate each other's clips, and compete on leaderboards. The platform features user profiles with statistics, a daily 'Clip of the Day' showcase, real-time rating updates powered by Redis, and content moderation to maintain community standards. Built with a modern tech stack for scalability and performance.",
+    industry: "Gaming",
+    technologies: [
+      "Next.js",
+      "Supabase",
+      "Tailwind CSS",
+      "NestJS",
+      "Redis",
+      "Cloudflare",
+      "Google Cloud Run",
+      "Vercel",
+    ],
+    image: "/project_images/jynxzi-clips.jpg",
+    website: "https://www.jynxzi-clips.com",
   },
 ];
