@@ -2,7 +2,7 @@ interface Project {
   title: string;
   description: string;
   industry: string;
-  image?: string;
+  image: string;
   website?: string;
   technologies?: string[];
 }
