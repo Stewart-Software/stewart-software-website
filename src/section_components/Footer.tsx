@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { EMAIL } from "@/links";
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
         >
           <h3 className="text-xl font-bold mb-4">Stewart Software</h3>
           <p className="text-gray-300 mb-6">
-            Turning ideas into launch-ready apps
+            Senior software engineering, on demand.
           </p>
 
           {/* Social Links */}
@@ -45,7 +46,7 @@ export default function Footer() {
             </motion.a>
 
             <motion.a
-              href="mailto:geoffrey@stewartsoftware.dev"
+              href={`mailto:${EMAIL}`}
               className="bg-[#E9C46A] p-3 rounded-full hover:bg-[#D4B341] transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -57,7 +58,8 @@ export default function Footer() {
 
           <div className="border-t border-gray-600 pt-6">
             <p className="text-gray-400 text-sm">
-              © 2025 Stewart Software. All rights reserved.
+              © {new Date().getFullYear()} Stewart Software. All rights
+              reserved.
             </p>
           </div>
         </motion.div>

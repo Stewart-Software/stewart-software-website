@@ -10,6 +10,7 @@ import Contact from "@/section_components/Contact";
 import Footer from "@/section_components/Footer";
 import Process from "@/section_components/Process";
 import FAQ from "@/section_components/FAQ";
+import Testimonials from "@/section_components/Testimonials";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -100,10 +101,11 @@ export default function Home() {
 
       <main className="max-w-4xl mx-auto px-6 pt-24 relative z-10">
         <Hero heroY={heroY} />
-        <About />
         <Services />
-        <Process />
         <Projects />
+        <Testimonials />
+        <About />
+        <Process />
         <FAQ />
         <Contact />
       </main>

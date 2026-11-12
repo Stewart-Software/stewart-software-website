@@ -1,17 +1,49 @@
+interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 interface Project {
   title: string;
   description: string;
   industry: string;
   image: string;
-  website?: string;
+  links?: ProjectLink[];
   technologies?: string[];
 }
 
 export const PROJECTS: Array<Project> = [
   {
+    title: "Talee",
+    description:
+      "Schools lose class time to roll call and often can't tell where a student is between periods. I built Talee end to end: it detects which room students are in and takes attendance automatically, with a web dashboard for district and school staff, iOS and Android apps for students and parents, and a backend that syncs rosters from student information systems. Available on the App Store and Google Play.",
+    industry: "Education",
+    image: "/project_images/talee.png",
+    links: [
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/us/app/taleemobile/id6783080391",
+      },
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.taleemobile.app",
+      },
+    ],
+    technologies: [
+      "Next.js",
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "NestJS",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+    ],
+  },
+  {
     title: "Let's Fellowship",
     description:
-      "Let's Fellowship is an online platform that fosters unity and collaboration among Christian churches. It simplifies the process of finding a church and promotes resource sharing, such as volunteers and event spaces, between congregations and community partners. The platform is designed to help churches connect, engage, and serve their communities more effectively.",
+      "Churches in the same community rarely know what the others need or can share. I built Let's Fellowship to connect them: people can find a church that fits, and congregations and community partners can share volunteers, event spaces, and other resources.",
     industry: "Religious/Nonprofit",
     image: "/project_images/lets-fellowship.png",
     technologies: [
@@ -23,23 +55,9 @@ export const PROJECTS: Array<Project> = [
     ],
   },
   {
-    title: "Talee",
-    description:
-      "Talee is a flexible school class management system that dynamically maps students to specific periods, terms, and schedule templates, enabling precise student assignment tracking and automating attendance management across complex academic calendars.",
-    industry: "Education",
-    image: "/project_images/talee.png",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "NestJS",
-      "MongoDB",
-    ],
-  },
-  {
     title: "Jynxzi Clips",
     description:
-      "Jynxzi Clips is a video game clip sharing platform primarily focused on Rainbow Six Siege content, where gamers can upload their best gameplay moments, rate each other's clips, and compete on leaderboards. The platform features user profiles with statistics, a daily 'Clip of the Day' showcase, real-time rating updates powered by Redis, and content moderation to maintain community standards. Built with a modern tech stack for scalability and performance.",
+      "Rainbow Six Siege players wanted one place to share and rank their best plays. I built and launched Jynxzi Clips, a clip platform for Xbox, PlayStation, and PC creators with community ratings, leaderboards, a daily Clip of the Day, and real-time scores. Multi-layer caching, CDN delivery, and Sentry monitoring kept it fast and reliable.",
     industry: "Gaming",
     technologies: [
       "Next.js",
@@ -47,11 +65,11 @@ export const PROJECTS: Array<Project> = [
       "Tailwind CSS",
       "NestJS",
       "Redis",
+      "Sentry",
       "Cloudflare",
       "Google Cloud Run",
       "Vercel",
     ],
     image: "/project_images/jynxzi-clips.jpg",
-    website: "https://www.jynxzi-clips.com",
   },
 ];
