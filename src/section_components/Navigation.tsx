@@ -2,8 +2,8 @@
 
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import { CALENDLY_URL } from "@/links";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,10 +11,10 @@ export default function Navigation() {
   const { scrollY } = useScroll();
 
   const navItems = [
-    "About",
     "Services",
-    "Process",
     "Projects",
+    "About",
+    "Process",
     "FAQ",
     "Contact",
   ];
@@ -42,13 +42,13 @@ export default function Navigation() {
   const backgroundColor = useTransform(
     scrollY,
     [0, 300],
-    ["rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.95)"]
+    ["rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.95)"],
   );
 
   const borderColor = useTransform(
     scrollY,
     [0, 300],
-    ["rgba(99, 102, 241, 0.2)", "rgba(229, 231, 235, 1)"]
+    ["rgba(99, 102, 241, 0.2)", "rgba(229, 231, 235, 1)"],
   );
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -96,7 +96,7 @@ export default function Navigation() {
               <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg">
                 <Image
                   src="/logos/stewartSoftwareLogoSmall.png"
-                  alt="Logo"
+                  alt="Stewart Software logo"
                   width={40}
                   height={40}
                 />
@@ -122,7 +122,7 @@ export default function Navigation() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item, index) => (
               <motion.a
                 key={item}
@@ -142,6 +142,16 @@ export default function Navigation() {
                 />
               </motion.a>
             ))}
+            <motion.a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-block bg-[#F4A261] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#E8914A] transition-colors whitespace-nowrap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Book a Call
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -214,6 +224,15 @@ export default function Navigation() {
                     {item}
                   </motion.a>
                 ))}
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-center bg-[#F4A261] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#E8914A] transition-colors mt-2"
+                >
+                  Book a Free Call
+                </a>
               </div>
             </div>
           </motion.div>

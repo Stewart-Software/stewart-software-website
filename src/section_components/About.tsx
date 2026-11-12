@@ -41,10 +41,11 @@ export default function About() {
               {/* Photo */}
               <div className="relative bg-white p-2 rounded-2xl shadow-xl">
                 <Image
-                  src="/about_images/profilePicture.jpg"
+                  src="/about_images/professional_headshot.jpeg"
                   alt="Geoffrey Stewart - Founder of Stewart Software"
-                  width={400}
-                  height={500}
+                  width={1208}
+                  height={1302}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="w-full h-auto rounded-xl object-cover"
                   priority
                 />
@@ -67,7 +68,7 @@ export default function About() {
           >
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-[#264653] mb-4">
-                Hi, I&apos;m Geoffrey 👨‍💻
+                Hi, I&apos;m Geoffrey
               </h3>
 
               <div className="space-y-4 text-gray-700">
@@ -76,16 +77,19 @@ export default function About() {
                   <span className="font-semibold text-[#F4A261]">
                     Stewart Software
                   </span>
-                  , where I help startups and small businesses turn their ideas
-                  into reality.
+                  , where I help founders and small businesses build and improve
+                  their software. Along the way I&apos;ve shipped production
+                  software as an engineer at{" "}
+                  <span className="font-semibold text-[#264653]">Google</span>{" "}
+                  and <span className="font-semibold text-[#264653]">AIR</span>.
                 </p>
 
                 <p className="leading-relaxed">
-                  With years of experience in full-stack development, I
-                  specialize in building high-quality MVPs and custom
-                  applications that not only look great but perform
-                  exceptionally. I believe in clean code, clear communication,
-                  and delivering results that exceed expectations.
+                  With years of full-stack experience, I build MVPs, web and
+                  mobile apps, and new features for products that already exist.
+                  Some clients bring me a napkin sketch; others bring a codebase
+                  that needs a hand. Either way, I care about clean code, clear
+                  communication, and shipping software that works.
                 </p>
               </div>
             </div>
@@ -93,23 +97,34 @@ export default function About() {
             {/* Tech Stack */}
             <div className="bg-gradient-to-r from-[#2A9D8F]/10 to-[#F4A261]/10 rounded-2xl p-6 border border-[#2A9D8F]/20">
               <h4 className="text-lg font-semibold text-[#264653] mb-4 text-center">
-                Technologies I Love Working With
+                Technologies I Work With
               </h4>
-              <div className="flex flex-wrap justify-center gap-2">
-                {STACK.map((tech, index) => (
-                  <motion.span
-                    key={tech}
-                    className="bg-white text-[#2A9D8F] px-3 py-2 rounded-full text-sm font-medium shadow-sm border border-[#2A9D8F]/30"
-                    whileHover={{ scale: 1.05, y: -2 }}
+              <dl className="space-y-3">
+                {STACK.map(({ category, items }, index) => (
+                  <motion.div
+                    key={category}
+                    className="sm:grid sm:grid-cols-[8rem_1fr] sm:gap-3 sm:items-start"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.08 }}
                   >
-                    {tech}
-                  </motion.span>
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-[#264653]/70 mb-1.5 sm:mb-0 sm:pt-1.5">
+                      {category}
+                    </dt>
+                    <dd className="flex flex-wrap gap-1.5">
+                      {items.map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-white text-[#2A9D8F] px-2.5 py-1 rounded-full text-sm font-medium shadow-sm border border-[#2A9D8F]/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </dd>
+                  </motion.div>
                 ))}
-              </div>
+              </dl>
             </div>
           </motion.div>
         </div>

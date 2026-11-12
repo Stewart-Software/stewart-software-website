@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, MotionValue } from "motion/react";
-import { Mail, ExternalLink, ArrowDown } from "lucide-react";
+import { CalendarDays, ExternalLink, ArrowDown } from "lucide-react";
+import { CALENDLY_URL } from "@/links";
 
 interface HeroProps {
   heroY: MotionValue<number>;
@@ -14,52 +15,43 @@ export default function Hero({ heroY }: HeroProps) {
       style={{ y: heroY }}
       className="min-h-screen flex flex-col justify-center text-center relative"
     >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <motion.h1
-          className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#264653] via-[#2A9D8F] to-[#F4A261] bg-clip-text text-transparent mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
+      <motion.div>
+        <motion.h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#264653] via-[#2A9D8F] to-[#F4A261] bg-clip-text text-transparent mb-6">
           Geoffrey Stewart
         </motion.h1>
 
-        <motion.p
-          className="text-xl md:text-2xl text-gray-600 mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          Founder & Software Engineer at{" "}
-          <span className="text-[#F4A261] font-semibold">Stewart Software</span>
-        </motion.p>
+        <motion.div className="mb-8">
+          <p className="text-2xl md:text-3xl text-[#264653] font-semibold mb-3">
+            Senior software engineering, on demand.
+          </p>
+          <p className="text-lg text-[#2A9D8F] font-medium max-w-2xl mx-auto">
+            I build MVPs from scratch and help founders and small businesses
+            ship, scale, and fix the software they already have.
+          </p>
+        </motion.div>
 
-        <motion.p
-          className="text-lg text-[#2A9D8F] font-medium mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          Turning ideas into launch-ready apps
-        </motion.p>
+        <motion.ul className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm text-gray-500 font-medium mb-10">
+          <li>Engineer at Google &amp; AIR</li>
+          <li aria-hidden className="text-[#2A9D8F]">
+            ·
+          </li>
+          <li>Web, mobile &amp; backend</li>
+          <li aria-hidden className="text-[#2A9D8F]">
+            ·
+          </li>
+          <li>Free intro call</li>
+        </motion.ul>
 
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-        >
+        <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <motion.a
-            href="#contact"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#F4A261] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E8914A] transition-colors flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get In Touch <Mail size={18} />
+            Book a Free Call <CalendarDays size={18} />
           </motion.a>
           <motion.a
             href="#projects"

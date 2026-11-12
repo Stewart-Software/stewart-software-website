@@ -3,6 +3,7 @@
 import { PROJECTS } from "@/projects";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -26,7 +27,10 @@ export default function Projects() {
 
       <div className="grid gap-8 md:grid-cols-2">
         {PROJECTS.map(
-          ({ title, description, industry, image, website }, index) => (
+          (
+            { title, description, industry, image, links, technologies },
+            index,
+          ) => (
             <motion.article
               key={title}
               initial={{ opacity: 0, y: 50 }}
@@ -53,39 +57,47 @@ export default function Projects() {
               )}
 
               <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-[#264653] group-hover:text-[#2A9D8F] transition-colors">
-                    {title}
-                  </h3>
-                  {website && (
-                    <a
-                      href={website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#2A9D8F] hover:text-[#264653] transition-colors"
-                      aria-label={`Visit ${title} website`}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                        />
-                      </svg>
-                    </a>
-                  )}
-                </div>
+                <h3 className="text-2xl font-bold text-[#264653] group-hover:text-[#2A9D8F] transition-colors mb-4">
+                  {title}
+                </h3>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   {description}
                 </p>
+
+                {technologies && technologies.length > 0 && (
+                  <ul
+                    className="flex flex-wrap gap-1.5 mb-4"
+                    aria-label={`${title} technologies`}
+                  >
+                    {technologies.map((tech) => (
+                      <li
+                        key={tech}
+                        className="bg-gray-100 text-gray-700 px-2.5 py-1 rounded-md text-xs font-medium"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {links && links.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {links.map(({ label, url }) => (
+                      <a
+                        key={url}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 bg-[#264653] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#2A9D8F] transition-colors"
+                        aria-label={`${title} on ${label}`}
+                      >
+                        {label}
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ))}
+                  </div>
+                )}
 
                 <motion.span
                   className="inline-flex items-center bg-gradient-to-r from-[#2A9D8F]/20 to-[#F4A261]/20 text-[#264653] px-4 py-2 rounded-full text-sm font-semibold border border-[#2A9D8F]/30"
